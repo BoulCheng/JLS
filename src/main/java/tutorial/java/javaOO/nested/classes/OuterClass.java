@@ -15,6 +15,25 @@ public class OuterClass {
     public static String s3;
 
 
+    /**
+     * 无论静态还是非静态都是可以 OuterClass.NestedClass
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        OuterClass.StaticNestedClass staticNestedClass = new OuterClass.StaticNestedClass();
+
+
+        OuterClass outerClass = new OuterClass();
+        OuterClass.NonStaticNestedClass nonStaticNestedClass2 = new OuterClass().new NonStaticNestedClass();
+
+
+        OuterClass.NonStaticNestedClass nonStaticNestedClass = new OuterClass().new NonStaticNestedClass();
+
+        System.out.println(nonStaticNestedClass);
+    }
+
+
     static class StaticNestedClass {
 
         public String getOuterMembers() {
