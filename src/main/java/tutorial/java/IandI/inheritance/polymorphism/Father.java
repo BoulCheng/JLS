@@ -21,4 +21,14 @@ abstract class Father extends GrandFather {
     void print3() {
         System.out.println("Father3");
     }
+
+    @Override
+    public void test() {
+        super.test();
+    }
+
+    @Override
+    public void testprint() {
+        System.out.println("Father");
+    }
 }

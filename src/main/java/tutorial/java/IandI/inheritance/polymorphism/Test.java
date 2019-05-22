@@ -11,6 +11,11 @@ public class Test {
 
 
         Son son = new Son();
+
+
+        son.test();
+
+
         son.print();
 
         son.print2();
