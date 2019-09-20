@@ -33,6 +33,14 @@ public class OuterClass {
         System.out.println(nonStaticNestedClass);
     }
 
+    private void gg() {
+        //该方法是实例方法 相当是调用该方法OuterClass的实例来new NonStaticNestedClass
+        //而在main等static方法中必须先new OuterClass
+        OuterClass.NonStaticNestedClass nonStaticNestedClass = new OuterClass.NonStaticNestedClass();
+        OuterClass.NonStaticNestedClass nonStaticNestedClass2 = new NonStaticNestedClass();
+        System.out.println(nonStaticNestedClass.getOuterMembers());
+    }
+
 
     static class StaticNestedClass {
 
