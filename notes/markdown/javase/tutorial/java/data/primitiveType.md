@@ -33,4 +33,32 @@
         long totalPrice = price * count; //price 为 int 型，count 为 long 型，运算结果为 long 型，运算结果正常，没有出现溢出的情况。
         ```
     
-    
+
+- java
+```
+
+    /**
+     * 在多种不同数据类型的表达式中，类型会自动向范围表示大的值的数据类型提升
+     *
+     * () 运算符优先级比 * 更高
+     * @param args
+     * 
+     * 输出
+     * 1938288676
+     * 1938288676
+     * 1152826961430048804
+     * 1152826961430048804
+     */
+    public static void main(String[] args) {
+
+        long l = 1073697798 * 1073697798;
+        System.out.println(l);
+        l = (long)(1073697798 * 1073697798); // 这只是把高位截取后的已经不正确的int值赋给了long
+        System.out.println(l);
+        l = (long)1073697798 * 1073697798;
+        System.out.println(l);
+        l = (long)((long)1073697798 * 1073697798);
+        System.out.println(l);
+    }
+
+```    
